@@ -4,8 +4,12 @@ import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
 import java.util.Map;
+/*
+封装web返回对象
+ */
 
 public class R extends HashMap<String,Object> {
+//    这里继承了HashMap就具备了put的方法
     public R(){
         put("code", HttpStatus.SC_OK);
         put("msg","success");

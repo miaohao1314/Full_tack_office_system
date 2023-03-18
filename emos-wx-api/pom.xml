@@ -88,6 +88,8 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.13</version>
         </dependency>
+
+<!--        封装状态码-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
