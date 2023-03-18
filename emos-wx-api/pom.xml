@@ -108,6 +108,7 @@
             <version>2.9.2</version>
         </dependency>
 
+<!--        后端验证：validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>

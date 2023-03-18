@@ -14,6 +14,9 @@ import javax.validation.Valid;
 @RequestMapping("/test")
 @Api("测试Web接口")
 public class TestController {
+    // @RequestBody: 表示封装的对象是一个数组
+    // @Valid : 表示对form里提交的参数数据进行验证
+
     @PostMapping("/sayHello")
     @ApiOperation("最简单的测试方法")
     public R sayHello(@Valid @RequestBody TestSayHelloForm form) {
