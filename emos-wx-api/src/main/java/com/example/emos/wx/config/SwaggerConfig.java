@@ -19,6 +19,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 利用Swagger搭建REST API
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -31,15 +34,18 @@ public class SwaggerConfig {
         docket.apiInfo(info);
 
         ApiSelectorBuilder selectorBuilder = docket.select();
+        // 设置扫描到路径，所有类和所有的方法
         selectorBuilder.paths(PathSelectors.any());
         selectorBuilder.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class));
         docket = selectorBuilder.build();
+
 
         ApiKey apiKey = new ApiKey("token", "token", "header");
         List<ApiKey> apiKeyList = new ArrayList<>();
         apiKeyList.add(apiKey);
         docket.securitySchemes(apiKeyList);
 
+//        设置令牌作用域
         AuthorizationScope scope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] scopes = {scope};
         SecurityReference reference = new SecurityReference("token", scopes);
